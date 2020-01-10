@@ -1,0 +1,3 @@
+assignment,duedate,timestamp,student_id,last_name,first_name,email,raw_score,late_submission_penalty,score,max_score
+ps1,,,A57752773,Chen,Claudia,,7.0,0.0,7.0,23.0
+ps1,,,A12345678,Doe,John,,9.5,0.0,9.5,23.0
