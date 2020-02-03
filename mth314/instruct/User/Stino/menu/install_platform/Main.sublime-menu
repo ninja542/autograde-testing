@@ -1,0 +1,33 @@
+[
+	{
+		"caption": "Arduino",
+		"mnemonic": "A",
+		"id": "arduino",
+		"children":
+		[
+			{
+				"caption": "Install Platform",
+				"id": "stino_install_platform",
+				"children":
+				[
+					{
+						"caption": "Refresh",
+						"id": "stino_refresh_install_platform",
+						"command": "stino_refresh_install_platform"
+					},
+					{
+						"caption": "Add Package",
+						"id": "stino_add_package",
+						"command": "stino_add_package"
+					},
+					{
+						"caption": "Add Arduino IDE",
+						"id": "stino_add_ide",
+						"command": "stino_add_ide"
+					},
+					{"caption": "-"}
+				]
+			}
+		]
+	}
+]
