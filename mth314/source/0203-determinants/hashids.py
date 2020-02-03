@@ -15,7 +15,6 @@ try:
 except NameError:
     StrType = str
 
-
 def _is_str(candidate):
     """Returns whether a value is a string."""
     return isinstance(candidate, StrType)
@@ -208,6 +207,13 @@ class Hashids(object):
         return _encode(values, self._salt, self._min_length, self._alphabet,
                        self._separators, self._guards)
 
+    def check(self, value, hashid):
+        if self.encode(value) == hashid:
+            print("Correct!")
+        else:
+            print("Incorrect value")
+            raise ValueError
+
     def decode(self, hashid):
         """Restore a tuple of numbers from the passed `hashid`.
         :param hashid The hashid to decode
@@ -245,3 +251,8 @@ class Hashids(object):
         '507f1f77bcf86cd799439011'
         """
         return ''.join(('%x' % x)[1:] for x in self.decode(hashid))
+
+
+
+def test_function():
+    print("test")

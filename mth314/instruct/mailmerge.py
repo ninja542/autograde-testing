@@ -8,7 +8,7 @@ import calendar
 ASSIGNMENT = sys.argv[1]
 ind = ASSIGNMENT.index("INST")
 ext = ASSIGNMENT.index(".ipynb")
-NEW_ASSIGNMENT = ASSIGNMENT[:ind] + "STUDENT" + ASSIGNMENT[ext:]
+# NEW_ASSIGNMENT = ASSIGNMENT[:ind] + "STUDENT" + ASSIGNMENT[ext:]
 assignment_str = ASSIGNMENT.split("/")[-1]
 
 tags = {}
@@ -41,7 +41,7 @@ for row in lines:
             row = row.replace(f"###{key}###",tags[key])
             print(row)
     new_lines.append(row)
-with open(NEW_ASSIGNMENT, 'w+', encoding="utf-8") as f:
+with open(ASSIGNMENT, 'w+', encoding="utf-8") as f:
     for l in new_lines:
         f.write(l)
 

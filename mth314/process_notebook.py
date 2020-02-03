@@ -1,4 +1,3 @@
-from nbgrader.apps import NbGraderAPI
 from traitlets.config import Config
 import IPython.core.display as IP
 import numpy as np
@@ -38,11 +37,16 @@ for filename in os.listdir(f"./source/{PROBLEM_FOLDER}"):
         except:
             print("No file exists")
 
+        try:
+            command = f"python ./instruct/mailmerge.py ./source/{PROBLEM_FOLDER}/{ASSIGNMENT}"
+            os.system(command)
+        except:
+            print("tags failed")
         # strip answer lines and strip notebook output
         try:
-            command = f"python ./instruct/makeStudentVersion.py ./source/{PROBLEM_FOLDER}/{ASSIGNMENT}"
-            os.system(command)
             command = f"python ./instruct/nbstripout.py ./source/{PROBLEM_FOLDER}/{ASSIGNMENT}"
+            os.system(command)
+            command = f"python ./instruct/makeStudentVersion.py ./source/{PROBLEM_FOLDER}/{ASSIGNMENT}"
             os.system(command)
         except:
             print("strip failed")
@@ -52,11 +56,6 @@ for filename in os.listdir(f"./source/{PROBLEM_FOLDER}"):
         #except:
         #    print("failed rename")
         # replace tags
-        try:
-            command = f"python ./instruct/mailmerge.py ./source/{PROBLEM_FOLDER}/{ASSIGNMENT}"
-            os.system(command)
-        except:
-            print("tags failed")
 
 try:
     command = f"nbgrader generate_assignment {PROBLEM_FOLDER}"
