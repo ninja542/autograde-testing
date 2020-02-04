@@ -21,13 +21,10 @@ try:
     month=int(assignment_str[0:2])
     day=int(assignment_str[2:4])
 
-    print(f"TESTING {day} {month}")
     my_date = datetime.datetime(2020, month, day)
     #my_date = date.today()
     weekday=calendar.day_name[my_date.weekday()]
     mnth=calendar.month_name[month]
-
-    print(my_date, weekday, mnth)
 
     tags['DUE_DATE']=f'{weekday} {mnth} {day}'
     tags['MMDD']=assignment_str[0:4]
