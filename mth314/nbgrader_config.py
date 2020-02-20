@@ -19,7 +19,7 @@ c.CourseDirectory.db_students = [
     dict(id="reasoner", first_name="Louis", last_name="Reasoner")
 ]
 
-c.IncludeHeaderFooter.header = "source/header.ipynb"
+c.IncludeHeaderFooter.header = "./source/header.ipynb"
 
 ###############################################################################
 # End additions by nbgrader quickstart
