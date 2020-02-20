@@ -3,6 +3,7 @@ import IPython.core.display as IP
 import numpy as np
 import sys
 import os
+import shutil
 
 PROBLEM_FOLDER = sys.argv[1]
 
@@ -62,8 +63,6 @@ try:
     os.system(command)
 except:
     print("Assignment already generated")
-
-
 
 # def merge(this_notebook, studentfolder='./', tags={}):
 #     #Move to the working directory

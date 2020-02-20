@@ -1,0 +1,7 @@
+assignment,duedate,timestamp,student_id,last_name,first_name,email,raw_score,late_submission_penalty,score,max_score
+0203-determinants,,,Claudia_Chen,,,,0.0,0.0,0.0,20.0
+0203-determinants,,,test space,,,,0.0,0.0,0.0,20.0
+0203-determinants,,,Claudia Chen,,,,1.0,0.0,1.0,20.0
+overall_course,,,Claudia_Chen,,,,0.0,0.0,0.0,2.0
+overall_course,,,test space,,,,0.0,0.0,0.0,2.0
+overall_course,,,Claudia Chen,,,,1.0,0.0,1.0,2.0
