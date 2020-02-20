@@ -9,7 +9,7 @@ c = get_config()
 c.CourseDirectory.course_id = "mth314"
 
 # Update this list with other assignments you want
-c.CourseDirectory.db_assignments = [dict(name="ps1")]
+c.CourseDirectory.db_assignments = []
 
 # Change the students in this list with that actual students in
 # your course

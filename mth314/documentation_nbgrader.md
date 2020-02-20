@@ -30,6 +30,41 @@ process_notebook.py converts the files in the source folder to the student versi
 
 The D2L python script from Dr. Colbry will take files from students and place them into the submitted folder.
 
-`nbgrader autograde`
+(nbgrader autograde will be in the script that also separates the d2l student submittions) `nbgrader autograde` 
 
-`nbgrader generate-feedback`
+The notebooks are then manually graded and then feedback is generated using the command `nbgrader generate-feedback`
+
+# nbgrader config options
+
+------------------------------------------------------------------------------
+IncludeHeaderFooter(NbGraderPreprocessor) configuration
+------------------------------------------------------------------------------
+```python
+## A preprocessor for adding header and/or footer cells to a notebook.
+
+## Path to footer notebook, relative to the root of the course directory
+c.IncludeHeaderFooter.footer = ''
+
+## Path to header notebook, relative to the root of the course directory
+c.IncludeHeaderFooter.header = ''
+```
+------------------------------------------------------------------------------
+Assignment Notebook Name Matching configuration
+------------------------------------------------------------------------------
+```python
+## File glob to match notebook names, excluding the '.ipynb' extension. This can be changed to filter by notebook.
+c.CourseDirectory.notebook_id = '*STUDENT'
+```
+#------------------------------------------------------------------------------
+# ClearSolutions(NbGraderPreprocessor) configuration
+#------------------------------------------------------------------------------
+```python
+## The delimiter marking the beginning of a solution
+c.ClearSolutions.begin_solution_delimeter = 'BEGIN SOLUTION'
+
+## The delimiter marking the end of a solution
+c.ClearSolutions.end_solution_delimeter = 'END SOLUTION'
+
+## The code snippet that will replace code solutions (language dependent)
+c.ClearSolutions.code_stub = {'python': '', 'matlab': "% YOUR CODE HERE\nerror('No Answer Given!')", 'octave': "% YOUR CODE HERE\nerror('No Answer Given!')", 'java': '// YOUR CODE HERE'}
+```
