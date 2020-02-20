@@ -15,6 +15,7 @@ config = Config()
 # course id
 config.CourseDirectory.course_id = "mth314"
 
+# remove assignment folder inside release
 try:
     # command = f'rmdir /Q /s "./release/{PROBLEM_FOLDER}"'
     # os.system(command)
@@ -35,7 +36,7 @@ for filename in os.listdir(f"./source/{PROBLEM_FOLDER}"):
             continue
         # print("Removing existing student version")
 
-        # remove existing student version
+        # remove existing student version file
         try:
             # command = f'del "./source/{PROBLEM_FOLDER}/{NEW_ASSIGNMENT}"'
             # os.system(command)
