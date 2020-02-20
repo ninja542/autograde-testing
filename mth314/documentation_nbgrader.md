@@ -34,6 +34,20 @@ The D2L python script from Dr. Colbry will take files from students and place th
 
 The notebooks are then manually graded and then feedback is generated using the command `nbgrader generate-feedback`
 
+# nbgrader database
+
+nbgrader stores assignment data in a database that it uses as a reference to grade students. If you make a mistake you should check the database to make sure that it reflects your changes.
+
+Check the database assignments: `nbgrader db assignment list`
+
+This will print a list of assignments and the problems in each assignment.
+
+If you need to update the assignment, remove the assignment using this command
+
+`nbgrader db assignment remove assignment_name`
+
+Then run process_notebook.py again, and the database will be updated to be correct.
+
 # nbgrader config options
 
 ------------------------------------------------------------------------------
