@@ -248,29 +248,49 @@ class Hashids(object):
         return _encode(values, self._salt, self._min_length, self._alphabet,
                        self._separators, self._guards)
 
+    # check if student value is equal to correct answer
     def check(self, value, hashid):
         if self.encode(value) == hashid:
             print("Correct!")
         else:
             print("We believe this is not the right answer")
-            raise ValueError
+            raise ValueError("Student answer doesn't match Instructor answer")
 
     def check_matrix(self, matrix, correct_matrix):
         if matrix.shape != correct_matrix.shape:
             print("We believe this is not the right answer")
-            raise ValueError
+            raise ValueError("Student answer doesn't match Instructor answer")
         for (x,y),value in np.ndenumerate(matrix):
             if self.encode(value) != correct_matrix[x][y]:
                 print("We believe this is not the right answer")
-                raise ValueError
+                raise ValueError("Student answer doesn't match Instructor answer")
         print("Correct!")
         return True
 
+    # encode matrix to string
     def encode_matrix(self, matrix):
         final_matrix = np.empty(matrix.shape, dtype="U30")
         for (x,y),value in np.ndenumerate(matrix):
             final_matrix[x][y] = self.encode(value)
         return final_matrix
+
+    # decode matrix to numbers
+    def decode_matrix(self, matrix):
+        final_matrix = np.empty(matrix.shape)
+        for (x,y),encoded in np.ndenumerate(matrix):
+            final_matrix[x][y] = self.decode(encoded)
+        return final_matrix
+
+    # check if student answer is close to the correct matrix
+    def check_close_matrix(self, matrix, correct_matrix):
+        if matrix.shape != correct_matrix.shape:
+            print("We believe this is not the right answer")
+            raise ValueError("Student answer doesn't match Instructor answer")
+        if not np.allclose(matrix, self.decode_matrix(correct_matrix)):
+            print("We believe this is not the right answer")
+            raise ValueError("Student answer doesn't match Instructor answer")
+        print("Correct!")
+        return True
 
     def decode(self, hashid):
         """Restore a tuple of numbers from the passed `hashid`.

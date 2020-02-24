@@ -30,9 +30,9 @@ process_notebook.py converts the files in the source folder to the student versi
 
 The D2L python script from Dr. Colbry will take files from students and place them into the submitted folder.
 
-(nbgrader autograde will be in the script that also separates the d2l student submittions) `nbgrader autograde` 
+(nbgrader autograde will be in the script that also separates the d2l student submittions) `nbgrader autograde assignment-name --force` 
 
-The notebooks are then manually graded and then feedback is generated using the command `nbgrader generate-feedback`
+The notebooks are then manually graded and then feedback is generated using the command `nbgrader generate-feedback assignment-name`
 
 # nbgrader database
 
